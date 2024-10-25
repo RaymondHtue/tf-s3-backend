@@ -14,7 +14,7 @@ resource "aws_s3_bucket_ownership_controls" "s3_ownership_tfstate" {
 }
 
 resource "aws_s3_bucket_acl" "s3_bucket_acl_tfstate" {
-  depends_on = [aws_s3_bucket_ownership_controls.s3_ownership_tfstate ]
+  depends_on = [aws_s3_bucket_ownership_controls.s3_ownership_tfstate]
 
   bucket = aws_s3_bucket.terraform_tfstate.id
   acl    = "private"
